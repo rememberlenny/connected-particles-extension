@@ -1,0 +1,58 @@
+// These are some things commonly added to the manifest. For a full description of the manifest
+// specification, go here: https://developer.chrome.com/extensions/manifest
+{
+  // START REQUIRED
+  "name": "Connected Particles Background",
+  "manifest_version": 2,
+  "version": "1.0.0",
+  // END REQUIRED
+
+  "description": "Connected Particle goodies",
+
+  "icons": {
+        "16": "img/icon.png",
+        "48": "img/icon.png",
+        "128": "img/icon.png"
+  },
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "img/icon.png"
+  },
+
+  "chrome_url_overrides": {
+      "newtab": "newtab.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*",
+                  "https://*/*"],
+      "js": [
+        "assets/js/contentscript.js"
+      ],
+
+      "css": [
+      ],
+
+      "run_at": "document_end"
+    }
+  ],
+
+  "background": {
+    "scripts": [ "assets/js/background.js" ]
+  },
+
+  "permissions": [
+    "tabs",
+    "storage",
+    "contextMenus",
+    "*://use.typekit.net/*",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "content_security_policy": "script-src 'self' https://use.typekit.net; object-src 'self'",
+  "web_accessible_resources": [
+    "img/*"
+  ]
+}
