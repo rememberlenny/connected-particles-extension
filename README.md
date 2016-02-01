@@ -6,7 +6,7 @@ Took code from: http://bl.ocks.org/mbostock/157333662ef11c151080
 
 # Attribution
 
-Made by @mbostock
+Made by (@mbostock)[http://twitter.com/mbostock]
 
 # Readme
 
